@@ -9,7 +9,7 @@ This task refactors a simple counter application to follow proper Android archit
 
 ## Screenshot
 
-![After Rotation](SS/2nd_mid.png)
+(SS2/2nd_mid.png)
 
 
 ---
