@@ -9,8 +9,9 @@ This task refactors a simple counter application to follow proper Android archit
 
 ## Screenshot
 
-(SS2/2nd_mid.png)
+![Landscape After Rotation](SS2/2nd_mid2.png)
 
+This screenshot demonstrates that the counter value is preserved after screen rotation, confirming proper state management using a ViewModel.
 
 ---
 
@@ -40,26 +41,46 @@ This task refactors a simple counter application to follow proper Android archit
 
 ## Unidirectional Data Flow
 
-1. State is stored in the ViewModel
-2. UI reads the state
-3. User actions trigger ViewModel functions
-4. State updates trigger recomposition
+This implementation follows unidirectional data flow:
+
+1. **State** is stored in the ViewModel
+2. **UI reads** the state from the ViewModel
+3. **User actions** (button clicks) trigger ViewModel functions
+4. **State updates** in the ViewModel automatically trigger recomposition
 
 ---
 
-## Key Features
+## Recomposition Behavior
 
-* ViewModel-based state management
-* Unidirectional data flow
-* Automatic recomposition
-* State survives screen rotation
+* When the state inside the ViewModel changes:
+
+  * The composable observes the updated state
+  * Jetpack Compose automatically recomposes the UI
+  * The updated count is displayed instantly
+
+---
+
+## Key Features Implemented
+
+* State managed inside a ViewModel
+* Clear separation between UI and business logic
+* Button interactions handled through ViewModel functions
+* Automatic UI updates via recomposition
+* State survives configuration changes (e.g., screen rotation)
+* Proper implementation of unidirectional data flow
+
+---
+
+## Conclusion
+
+This implementation demonstrates how to structure a Compose application using ViewModel and unidirectional data flow. It improves scalability, maintainability, and lifecycle awareness compared to managing state directly in the composable.
 
 ---
 
 ## AI Usage Disclosure
 
 * **Tool Used:** ChatGPT
-* **How it was used:** Assisted in writing the README and fixing small bugs/issues
-* **Extent of Use:** Used only for support; all implementation was done independently
+* **How it was used:** Assisted in writing and structuring the README, and helped identify and fix small bugs/issues during development
+* **Extent of Use:** AI was used only for support purposes; all core implementation and problem-solving were completed independently
 
 ---
